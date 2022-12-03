@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://haolin11.github.io/image/top-img/camera_imu.png">
 <meta property="article:published_time" content="2022-12-03T06:56:21.729Z">
-<meta property="article:modified_time" content="2022-12-03T12:20:30.899Z">
+<meta property="article:modified_time" content="2022-12-03T13:26:12.762Z">
 <meta property="article:author" content="Peterpan">
 <meta property="article:tag" content="VINS">
 <meta property="article:tag" content="SlAM">
@@ -54,7 +54,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-12-03 20:20:30'
+  postUpdate: '2022-12-03 21:26:12'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -163,7 +163,7 @@ window.addEventListener('load',()=> { preloader.endLoading() })
 if (true) {
   document.addEventListener('pjax:send', () => { preloader.initLoading() })
   document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-image"></i><span> Image</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/top-img/camera_imu.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Peterpan-Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-image"></i><span> Image</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">传感器时间戳对齐</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-03T06:56:21.729Z" title="发表于 2022-12-03 14:56:21">2022-12-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-03T12:20:30.899Z" title="更新于 2022-12-03 20:20:30">2022-12-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/VINS%E5%AD%A6%E4%B9%A0/">-VINS学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="传感器时间戳对齐"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><meta name="referrer" content="no-referrer" />
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-image"></i><span> Image</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/top-img/camera_imu.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Peterpan-Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-image"></i><span> Image</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">传感器时间戳对齐</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-03T06:56:21.729Z" title="发表于 2022-12-03 14:56:21">2022-12-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-03T13:26:12.762Z" title="更新于 2022-12-03 21:26:12">2022-12-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/VINS%E5%AD%A6%E4%B9%A0/">-VINS学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="传感器时间戳对齐"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><meta name="referrer" content="no-referrer" />
 <h1
 id="online-temporal-calibration-for-monocular-visual-inertial-systems">Online
 Temporal Calibration for Monocular Visual-Inertial Systems</h1>
@@ -203,12 +203,8 @@ t<sub>d</sub>
 ，其中时间偏移td是我们应该移动摄像机时间戳的时间量，以便摄像机和IMU数据流在时间上保持一致。td可以是正值或负值。如果相机延迟比IMU长，则td为负值。相反，td为正值。</li>
 </ul></li>
 </ol>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220702152123847.png"
-alt="image-20220702152123847" />
-<figcaption aria-hidden="true">image-20220702152123847</figcaption>
-</figure>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220702152123847.png" /></p>
 <ol start="8" type="1">
 <li>在图像平面的特征速度：
 <ul>
@@ -216,12 +212,8 @@ alt="image-20220702152123847" />
 <li>为此，我们引入了用于建模和补偿时间错位的特征速度。在很短的时间内（几毫秒），摄像机的运动可以被视为匀速运动，故图像特征在短时间内在图像平面上也近似匀速移动。基于这个假设，我们计算特征在图像平面上的速度。如图2所示，I<sub>k</sub>和I<sub>k+1</sub>是两个连续的图像帧。假设摄像机在短时间内[t<sub>k</sub>，t<sub>k+1</sub>]以恒定速度从C<sup>k</sup>移动到C<sup>k+1</sup>。因此，我们近似地认为特征l在这个短时间段内也在图像平面上以恒定速度V<sub>l</sub><sup>k</sup>移动。速度V<sub>l</sub><sup>k</sup>的计算为像素移动值除以时间间隔t。</li>
 </ul></li>
 </ol>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220702173535347.png"
-alt="image-20220702173535347" />
-<figcaption aria-hidden="true">image-20220702173535347</figcaption>
-</figure>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220702173535347.png" /></p>
 <ol start="9" type="1">
 <li><p>有时间偏移的视觉因子：</p>
 <ul>
@@ -235,57 +227,33 @@ alt="image-20220704091148248" />
 <figcaption aria-hidden="true">image-20220704091148248</figcaption>
 </figure></li>
 <li><p>z<sub>l</sub><sup>k</sup>是对第k帧中特征l的观察。（R<sub>ck</sub><sup>w</sup>，p<sub>ck</sub><sup>w</sup>）是摄像机位姿，将特征P<sub>l</sub>从全局坐标系转换为局部摄像机坐标系。π（·）表示摄像机投影模型，该模型将三维特征投影到图像平面，并产生畸变。</p>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704091922829.png"
-alt="image-20220704091922829" />
-<figcaption aria-hidden="true">image-20220704091922829</figcaption>
-</figure>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704091922829.png" /></p>
 <p>（图3描述了重投影过程。虚线表示没有时间偏移建模的传统重投影过程。实线表示考虑了时间偏移的重投影。黄线表示IMU约束。IMU约束与传统的重投影约束不一致。通过优化td，我们可以在时域中找到与IMU约束匹配的最佳摄像机位姿和特征观测。）</p></li>
 <li><p>摄像机位姿（R<sub>ck</sub><sup>w</sup>，p<sub>ck</sub><sup>w</sup>）受上述公式中视觉测量的约束，它还受到IMU测量的约束。实际上，如果IMU和摄像机之间存在时间错位，则IMU约束与时域中的视觉约束不一致。换句话说，我们应该向前或向后移动摄像机序列，以便摄像机和IMU数据流在时间上保持一致。我们没有移动整个摄像机或IMU序列，而是在时间轴中专门移动特征的观测值。新公式如下：</p>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704105711216.png"
-alt="image-20220704105711216" />
-<figcaption aria-hidden="true">image-20220704105711216</figcaption>
-</figure></li>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704105711216.png" /></p></li>
 <li><p>V<sub>l</sub><sup>k</sup>是特征在图像平面上的速度，由等式2得出。td是时间偏移未知变量，它改变了特征在时域中的观测值。通过优化td，我们可以在时域中找到与IMU约束匹配的最佳摄像机位姿和特征观测。</p></li>
 <li><p>（2）深度参数化：该特征也可以参数化为相对于图像坐标系的深度或逆深度。我们以图像
 i 中的深度 λi 为例。从图像 i 到图像 j 的传统重投影误差写为：</p>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704121943301.png"
-alt="image-20220704121943301" />
-<figcaption aria-hidden="true">image-20220704121943301</figcaption>
-</figure></li>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704121943301.png" /></p></li>
 <li><p>首先将特征l投影到全局帧中，然后将其反投影到局部摄像机帧 j
 中的图像平面上。残差是观察和反投影位置之间的偏移。</p></li>
 <li><p>与等式4类似，我们考虑时间偏移变量td到方程中：</p>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704122123247.png"
-alt="image-20220704122123247" />
-<figcaption aria-hidden="true">image-20220704122123247</figcaption>
-</figure></li>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220704122123247.png" /></p></li>
 </ul></li>
 <li><p>带时间偏移的优化：</p>
 <ul>
 <li><p>通过利用上述视觉因子，我们可以轻松地将时间校准函数添加到典型的基于视觉惯性优化的框架中。在这些框架中，视觉惯性SLAM被表述为一个非线性优化问题，将视觉和惯性测量紧密耦合。如图4所示，多个摄像机帧和IMU测量被捆绑为“束”，“束”大小决定计算的时间复杂度。局部束调整（BA）联合优化摄像机和IMU状态以及特征位置。我们可以很容易地将提出的加入时间偏移优化的视觉因子添加到这种框架中。具体而言，整个状态变量增加时间偏移优化量，状态变量定义为：</p>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220705090919710.png"
-alt="image-20220705090919710" />
-<figcaption aria-hidden="true">image-20220705090919710</figcaption>
-</figure></li>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220705090919710.png" /></p></li>
 <li><p>其中，第k组预积分的IMU状态由全局坐标系中的位置p<sub>k</sub><sup>w</sup>、速度v<sub>k</sub><sup>w</sup>、方向R<sub>k</sub><sup>w</sup>和局部body坐标系中的IMU偏差b<sub>a</sub>、b<sub>g</sub>组成。特征
 P<sub>l</sub>
 由全局坐标系中的3D位置或相对于特定图像坐标系的深度参数化。整个问题被表述为一个包含IMU传播因子、重投影因子以及某个先验因子的代价函数。因此，我们使用加入时间偏移变量的视觉因子来实现时间偏移校准，</p>
-<figure>
-<img
-src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220705090957807.png"
-alt="image-20220705090957807" />
-<figcaption aria-hidden="true">image-20220705090957807</figcaption>
-</figure></li>
+<p><img
+src="https://gitee.com/haolin12/pixgo_tuchuang/raw/master/img/image-20220705090957807.png" /></p></li>
 <li><p>e<sub>B</sub>（z<sub>k+1</sub><sup>k</sup>
 ，X）是IMU传播的误差项。B是所有IMU测量值的集合。e<sub>C</sub>（z<sub>l</sub><sup>j</sup>
 ，X）是提出的包含时间偏移的视觉（重）投影误差，C是在图像帧中观察到至少两次的特征集。误差由其协方差的逆
@@ -360,7 +328,7 @@ document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/j
   MathJax.startup.document.state(0)
   MathJax.texReset()
   MathJax.typeset()
-}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="35" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="45" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
 
 var pjax = new Pjax({
   elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
