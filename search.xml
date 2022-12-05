@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Cmake常用语句</title>
+      <link href="/2022/12/05/Cmake%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/"/>
+      <url>/2022/12/05/Cmake%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="cmake基本结构">cmake基本结构</h2><p>首先一般先声明Cmake版本要求、项目名称、编译标志：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span> (VERSION <span class="number">3</span>.x)</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span> (XXXXXXX)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">set</span> (CMAKE_CXX_FLAGS <span class="string">&quot;$&#123;CMAKE_CXX_FLAGS&#125; -Wall -Werror -std=c++14&quot;</span>)</span><br></pre></td></tr></table></figure><p>设置源码目录：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> (source_dir <span class="string">&quot;$&#123;PROJECT_SOURCE_DIR&#125;/src/&quot;</span>)</span><br><span class="line">    <span class="comment">#$&#123;PROJECT_SOURCE_DIR&#125;为CMakeLists.txt所在文件夹位置</span></span><br></pre></td></tr></table></figure><p>可选配置（变量代替所有文件）：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span> (GLOB source_files <span class="string">&quot;$&#123;source_dir&#125;/*.cpp&quot;</span>)</span><br><span class="line">    <span class="comment">#$&#123;source_dir&#125;为上文设置的源码目录；$&#123;&#125;为取值操作；*为通配符；*.cpp所有cpp文件</span></span><br></pre></td></tr></table></figure><p>生成可执行文件：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span> (HelloWorld <span class="variable">$&#123;source_files&#125;</span>)</span><br><span class="line">    <span class="comment">#$&#123;source_files&#125;为上文设置的汇总源文件</span></span><br><span class="line">    <span class="comment">#所有文件都要编译（生成.o二进制文件），最终链接Link生成名为HelloWorld的可执行文件</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Cmake </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>碎片学习</title>
       <link href="/2022/12/04/%E7%A2%8E%E7%89%87%E5%AD%A6%E4%B9%A0/"/>
       <url>/2022/12/04/%E7%A2%8E%E7%89%87%E5%AD%A6%E4%B9%A0/</url>
