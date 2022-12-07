@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C++碎片</title>
+      <link href="/2022/12/07/C-%E7%A2%8E%E7%89%87/"/>
+      <url>/2022/12/07/C-%E7%A2%8E%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<h2 id="关于c头文件">关于C++头文件</h2><h3 id="导入符号使用细节">导入符号使用细节</h3><p><strong>"xxx.h"</strong>和<strong>&lt;xxx.h&gt;</strong>都用于包含头文件，<strong>"xxx.h"</strong>优先从代码include文件（文件夹）中查找；<strong>&lt;xxx.h&gt;</strong>优先从计算机已安装库里查找（如：Linux系统中/include; /local/include）</p><p>此外常用的<strong>"xxx.h"</strong>可用作相对位置查找（比较实用）</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;../include/Log/Log.h&quot;</span></span></span><br><span class="line">%表示从当前文件的上一级目录下的include/Log/中查找Log.h</span><br></pre></td></tr></table></figure><h3 id="避免重复导入">避免重复导入</h3><p>常用形式：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _LOG_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _LOG_H</span></span><br><span class="line"></span><br><span class="line">XXX</span><br><span class="line">XXX</span><br><span class="line">    </span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure><p>可用简洁形式 <strong>#pragma once</strong> 代替（推荐）</p><p>检查重复导入作用，例如：在头文件中构造一个结构体，若不做重复导入避免处理，会报重定义错误。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cmake常用语句</title>
       <link href="/2022/12/05/Cmake%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/"/>
       <url>/2022/12/05/Cmake%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5/</url>
@@ -20,9 +45,9 @@
       
         <tags>
             
-            <tag> Cmake </tag>
-            
             <tag> C++ </tag>
+            
+            <tag> Cmake </tag>
             
         </tags>
       
