@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>C++新特性</title>
+      <link href="/2022/12/14/C-%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+      <url>/2022/12/14/C-%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h2 id="c可变参数模板">C++可变参数模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"><span class="comment">//函数出口，变参本质上像递归，最后没有参数时执行f()，所以需要出口</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="keyword">class</span>...Args&gt;    </span><br><span class="line">    <span class="comment">//变参模板格式class...Args，包括后面的Args...args</span></span><br><span class="line">    <span class="comment">//想要一个一个操作参数则需  class T——T t</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(T t, Args...args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout&lt;&lt; t &lt;&lt;<span class="string">&quot;---&quot;</span>&lt;&lt;<span class="keyword">sizeof</span>...(args)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="comment">//t为输入的第一个参数（sizeof...查看参数个数）</span></span><br><span class="line">    <span class="built_in">f</span>(args...);    <span class="comment">//剩下的参数递归调用，最后没参数调用出口函数f()</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">f</span>(<span class="number">1</span>,<span class="string">&quot;%%&amp;*$&quot;</span>,<span class="number">2.3</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>C++<strong>可变参数模板</strong>本质上像递归，所以调用到最后无参，需要出口函数。</p><p>值得注意的是<strong>模板函数需要实例化才能被调用</strong>，如果想用<strong>if</strong>语句代替出口函数，下面是一个<strong>错误的</strong>用法（注释有正解）：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span>...Args&gt;    </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">f</span><span class="params">(T t, Args...args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout&lt;&lt; t &lt;&lt;<span class="string">&quot;---&quot;</span>&lt;&lt;<span class="keyword">sizeof</span>...(args)&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    <span class="comment">//t为第一个参数，会实例化出T的类型（sizeof...查看参数个数）</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">sizeof</span>...(args) &gt; <span class="number">0</span>)</span><br><span class="line">    <span class="comment">//if编译时还会显示出不符合条件的分支，会产生f()</span></span><br><span class="line">    <span class="comment">//而f()没有参数模板无法实例化，所以会报无匹配f()</span></span><br><span class="line">    <span class="comment">//可以使用if constexpr，编译时去掉不符合条件的分支！</span></span><br><span class="line">        <span class="comment">//正确用法为if constexpr(sizeof...(args) &gt; 0)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">f</span>(args...);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>另外，可变参模板也可<strong>传函数</strong>（相当于函数指针做变量）：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> F, <span class="keyword">class</span>...Args&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">call</span><span class="params">(F fuc, Args...args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">fuc</span>(args...);</span><br><span class="line">    <span class="comment">//此例无返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">call</span>([](<span class="type">int</span> a, std::string str)&#123;std::cout&lt;&lt;a&lt;&lt;<span class="string">&quot;  &quot;</span>&lt;&lt;str&lt;&lt;std::endl;&#125;, <span class="number">5</span>, <span class="string">&quot;gyduebc&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++碎片</title>
       <link href="/2022/12/07/C-%E7%A2%8E%E7%89%87/"/>
       <url>/2022/12/07/C-%E7%A2%8E%E7%89%87/</url>
@@ -45,9 +70,9 @@
       
         <tags>
             
-            <tag> C++ </tag>
-            
             <tag> Cmake </tag>
+            
+            <tag> C++ </tag>
             
         </tags>
       
