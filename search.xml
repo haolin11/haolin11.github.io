@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>WSL</title>
+      <link href="/2023/08/24/WSL/"/>
+      <url>/2023/08/24/WSL/</url>
+      
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><h1 id="wsl">WSL</h1><p>WSL -l -v 查看Ubuntu系统状态以及使用的WSL版本</p><p>WSL --export Ubuntu18_lin D:_820.tar</p><p>备份Ubuntu18_lin到D:_820.tar</p><p>WSL --import Ubuntu_newname D:_newaddress D:_820.tar</p><p>将D:_820.tar备份加载到D:_newaddress并命名为Ubuntu_newname</p><p>WSL -d Ubuntu_newname 启动Ubuntu_newname系统</p><p>WSL -d Ubuntu_newname -u username以某用户启动Ubuntu_newname系统，推荐用这个！</p><p>usbipd wsl list 查看挂载设备busid</p><p>Ubuntu终端 usbipd wsl attach --busid 1-5挂载设备</p><p>博客生成：（在/blog层级文件夹）hexo clean &amp;&amp; hexo generate博客预览：hexo s 一键推送：hexo clean &amp;&amp; hexo generate&amp;&amp; hexo deploy</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++碎片(二)</title>
       <link href="/2022/12/28/C-%E7%A2%8E%E7%89%87-%E4%BA%8C/"/>
       <url>/2022/12/28/C-%E7%A2%8E%E7%89%87-%E4%BA%8C/</url>
